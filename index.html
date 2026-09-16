@@ -22,9 +22,17 @@
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Hi, I'm Mattalika 👋</h1>
-      <p>Computational linguist based in Germany, turning language into data -- from translation, to NLP research, to automation.</p>
+    <section class="hero hero-with-photo">
+      <div class="hero-text">
+        <h1>Hi, I'm Mattalika 👋</h1>
+        <p>Computational linguist based in Germany, turning language into data -- from translation, to NLP research, to automation.</p>
+      </div>
+      <div class="hero-photo">
+        <img src="photos/profile.jpg" alt="Mattalika Intarahom"
+             onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
+             onerror="this.remove();">
+        <span aria-hidden="true">🙂</span>
+      </div>
     </section>
 
     <section id="about" class="section">

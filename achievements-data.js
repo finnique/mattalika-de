@@ -3,18 +3,21 @@
 // below. Order in this array = display order (top to bottom).
 //
 // Fields:
-//   icon  - an emoji shown until a real photo is added (see photos/README.md)
-//   photo - path to the photo file for this achievement (doesn't need to
-//           exist yet -- the icon keeps showing until it does)
-//   title - the heading
-//   meta  - the small line under the heading (organization / place / dates)
-//   text  - the description paragraph. Keep it roughly 150 words or less.
-//           Use \n\n between lines if you want a paragraph break (rare).
+//   icon         - an emoji shown until a real photo is added (see photos/README.md)
+//   photo        - path to the photo file for this achievement (doesn't need to
+//                  exist yet -- the icon keeps showing until it does)
+//   photoCaption - optional short caption shown under the photo (e.g. "Graduation
+//                  day, Stuttgart"). Leave as "" for no caption.
+//   title        - the heading
+//   meta         - the small line under the heading (organization / place / dates)
+//   text         - the description paragraph. Keep it roughly 150 words or less.
+//                  Use \n\n between lines if you want a paragraph break (rare).
 
 const ACHIEVEMENTS = [
   {
     icon: "🎓",
     photo: "photos/masters.jpg",
+    photoCaption: "",
     title: "M.Sc. in Computational Linguistics",
     meta: "University of Stuttgart, Germany &middot; 2022 &ndash; 2025",
     text: `After years of working with language professionally as a translator, I went back
@@ -30,6 +33,7 @@ const ACHIEVEMENTS = [
   {
     icon: "💼",
     photo: "photos/tutor.jpg",
+    photoCaption: "The meme wall outside our computer pool, always nice to see after a long day of debugging. :)",
     title: "Tutor, Institute for Natural Language Processing (IMS)",
     meta: "University of Stuttgart, Germany &middot; Apr &ndash; Sep 2024",
     text: `Alongside my master's studies, I worked as a tutor at the Institute for Natural
@@ -42,6 +46,7 @@ const ACHIEVEMENTS = [
   {
     icon: "💼",
     photo: "photos/zenshu.jpg",
+    photoCaption: "",
     title: "Japanese Translator",
     meta: "Zenshu Publishing Co., Ltd. &middot; Bangkok, Thailand &middot; 2021 &ndash; 2022",
     text: `Before moving into computational linguistics, I translated Japanese publications
@@ -54,6 +59,7 @@ const ACHIEVEMENTS = [
   {
     icon: "💼",
     photo: "photos/sap.jpg",
+    photoCaption: "",
     title: "SAP Consultant",
     meta: "Japan System Techniques Co., Ltd. &middot; Osaka, Japan &middot; 2019 &ndash; 2021",
     text: `As an SAP consultant in Osaka, I analyzed clients' existing workflows and
@@ -66,6 +72,7 @@ const ACHIEVEMENTS = [
   {
     icon: "🎓",
     photo: "photos/bachelor.jpg",
+    photoCaption: "",
     title: "B.A. in Japanese",
     meta: "Chulalongkorn University &middot; Bangkok, Thailand &middot; 2012 &ndash; 2017",
     text: `My academic journey with language started here. I specialized in Japanese
@@ -79,6 +86,7 @@ const ACHIEVEMENTS = [
   {
     icon: "💼",
     photo: "photos/luckpim.jpg",
+    photoCaption: "",
     title: "Japanese Translator",
     meta: "Luckpim Publishing Co., Ltd. &middot; Bangkok, Thailand &middot; 2013 &ndash; 2017",
     text: `While still an undergraduate, I worked as a Japanese translator for Luckpim
@@ -90,6 +98,7 @@ const ACHIEVEMENTS = [
   {
     icon: "🌏",
     photo: "photos/mext.jpg",
+    photoCaption: "",
     title: "MEXT Scholarship &mdash; Exchange Program",
     meta: "Chiba University &middot; Chiba, Japan &middot; 2014 &ndash; 2015",
     text: `I spent a year in Japan on a full MEXT scholarship, studying Japanese language and

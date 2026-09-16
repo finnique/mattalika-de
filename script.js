@@ -11,11 +11,14 @@ document.getElementById("year").textContent = new Date().getFullYear();
     <article class="timeline-item">
       <div class="timeline-marker" aria-hidden="true">${item.icon}</div>
       <div class="timeline-content">
-        <div class="timeline-photo" aria-hidden="true">
-          <img src="${item.photo}" alt="" loading="lazy"
-               onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
-               onerror="this.remove();">
-          <span>${item.icon}</span>
+        <div class="timeline-photo-wrap">
+          <div class="timeline-photo" aria-hidden="true">
+            <img src="${item.photo}" alt=""
+                 onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
+                 onerror="this.remove();">
+            <span>${item.icon}</span>
+          </div>
+          ${item.photoCaption ? `<p class="timeline-photo-caption">${item.photoCaption}</p>` : ""}
         </div>
         <div class="timeline-text">
           <h3>${item.title}</h3>
