@@ -61,6 +61,10 @@ a:hover {
   color: var(--text);
 }
 
+.nav-links a.active {
+  color: var(--accent);
+}
+
 main {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -91,6 +95,22 @@ main {
   margin-bottom: 1rem;
 }
 
+.section-intro {
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+}
+
+.meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: -0.25rem 0 0.75rem;
+}
+
+.hero-compact {
+  padding: 3rem 0 2rem;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -106,6 +126,187 @@ main {
 
 .card h3 {
   margin-top: 0;
+}
+
+.card a {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* Achievements timeline */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.timeline-marker {
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  top: 3rem;
+  bottom: -2rem;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-content {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Alternate the photo side per entry: 1st photo-right, 2nd photo-left, ... */
+.timeline-item:nth-child(odd) .timeline-content {
+  flex-direction: row-reverse;
+}
+
+.timeline-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.timeline-text h3 {
+  margin: 0 0 0.25rem;
+}
+
+.timeline-text p:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-photo {
+  flex: 0 0 auto;
+  width: 165px;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--border),
+    var(--border) 8px,
+    var(--bg) 8px,
+    var(--bg) 16px
+  );
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.timeline-photo span {
+  opacity: 0.7;
+}
+
+.timeline-photo img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Skills page */
+.skill-group {
+  margin-bottom: 1.75rem;
+}
+
+.skill-group h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.tag-list li {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.lang-table {
+  width: 100%;
+  max-width: 360px;
+  border-collapse: collapse;
+}
+
+.lang-table th,
+.lang-table td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.lang-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 480px) {
+  .timeline-item {
+    gap: 0.85rem;
+  }
+  .timeline-marker {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1rem;
+  }
+  .timeline-item:not(:last-child)::before {
+    left: 1.125rem;
+    top: 2.25rem;
+  }
+  .timeline-content {
+    padding: 1rem;
+    flex-direction: column !important;
+  }
+  .timeline-photo {
+    width: 100%;
+    max-width: 260px;
+  }
 }
 
 .site-footer {
