@@ -8,10 +8,17 @@
 //                  exist yet -- the icon keeps showing until it does)
 //   photoCaption - optional short caption shown under the photo (e.g. "Graduation
 //                  day, Stuttgart"). Leave as "" for no caption.
+//   showPhoto    - optional. Set to false to hide the photo/icon box entirely
+//                  for this entry (text takes the full width instead). Leave
+//                  out, or set to true, to show it as normal.
 //   title        - the heading
 //   meta         - the small line under the heading (organization / place / dates)
 //   text         - the description paragraph. Keep it roughly 150 words or less.
-//                  Use \n\n between lines if you want a paragraph break (rare).
+//                  Leave a blank line between two chunks of text to start a new
+//                  paragraph. Single line breaks (just wrapping text for
+//                  readability in this file) are ignored, as usual in HTML.
+//                  You can use <strong>bold</strong> or <em>italic</em> to
+//                  highlight words.
 
 const ACHIEVEMENTS = [
   {
@@ -20,15 +27,21 @@ const ACHIEVEMENTS = [
     photoCaption: "",
     title: "M.Sc. in Computational Linguistics",
     meta: "University of Stuttgart, Germany &middot; 2022 &ndash; 2025",
-    text: `After years of working with language professionally as a translator, I went back
-      to university to understand it computationally. My studies focused on Natural
-      Language Processing, computational language modeling, and applied data science,
-      with courses spanning Computational Linguistics, Deep Learning for Speech and
-      Language Processing, and Machine Translation. For my thesis, "Framing Power and
-      Agency through Passive Voice," I combined linguistics and NLP to analyze how news
-      coverage of the Israel&ndash;Palestine conflict uses passive voice to shape who is
-      portrayed as responsible and who as affected. This degree is the bridge between my
-      linguistic background and the data/software work I do today.`,
+    text: `After years of working with language professionally as a translator, 
+    I went back to university to understand it computationally. My coursework covered NLP, 
+    deep learning for speech and language processing, and machine translation, alongside 
+    applied data science.
+
+    For my thesis, <strong> "Framing Power and Agency through Passive Voice" </strong>, I analysed how news 
+    coverage of the Israel–Palestine conflict uses passive voice to shape who is portrayed 
+    as responsible and who as affected. 
+    
+    Before any of the linguistics could happen, I had to collect articles from several outlets, 
+    then clean and store them in a form I could actually analyse. It was slow, manual work, 
+    and it was what pointed me toward data engineering, where automating the data pipeline 
+    delivers real value to downstream tasks like data analysis and model training.
+    
+    `,
   },
   {
     icon: "💼",
@@ -36,23 +49,30 @@ const ACHIEVEMENTS = [
     photoCaption: "The meme wall outside our computer pool, always nice to see after a long day of debugging. :)",
     title: "Tutor, Institute for Natural Language Processing (IMS)",
     meta: "University of Stuttgart, Germany &middot; Apr &ndash; Sep 2024",
-    text: `Alongside my master's studies, I worked as a tutor at the Institute for Natural
-      Language Processing, supporting undergraduate students with coursework and guiding
-      them through their own projects. I held regular sessions, answered questions on
-      programming and NLP concepts, and kept track of attendance and progress. It was a
-      good reminder that explaining a concept clearly is its own skill -- one that
-      pushed me to understand the material even better myself.`,
+    text: `Alongside my master's studies, I worked as a tutor at the Institute for Natural Language Processing, 
+    supporting graduate students through their own projects in the <em>Computational Linguistics Team Laboratory</em>. 
+    Most of what they needed wasn't technical. It was help shaping a research question: what was worth asking, 
+    what was feasible in the time they had, and how my own project had approached similar problems. 
+    It was a good reminder that explaining a concept clearly is its own skill, one that pushed me to understand 
+    the material even better myself.`,
   },
   {
     icon: "💼",
     photo: "photos/zenshu.jpg",
+    showPhoto: false,
     photoCaption: "",
     title: "Japanese Translator",
-    meta: "Zenshu Publishing Co., Ltd. &middot; Bangkok, Thailand &middot; 2021 &ndash; 2022",
-    text: `Before moving into computational linguistics, I translated Japanese publications
-      into Thai for Zenshu Publishing. The work demanded precision and cultural
-      sensitivity in equal measure -- finding the Thai phrasing that stayed faithful to
-      the source while still reading naturally to a Thai audience. It sharpened my eye
+    meta: "Luckpim Publishing &amp; Zenshu Publishing &middot; Bangkok, Thailand &middot; 2013 &ndash; 2022",
+    text: `<strong>Luckpim Publishing Co., Ltd. (2013&ndash;2017)</strong><br>
+      While still an undergraduate, I worked as a Japanese translator for Luckpim
+      Publishing, translating Japanese books into Thai for publication. Balancing this
+      work alongside my studies taught me how to manage deadlines and maintain
+      translation quality under pressure, and gave me real-world experience applying the
+      language skills I was building in the classroom well before I graduated.
+
+      <strong>Zenshu Publishing Co., Ltd. (2021&ndash;2022)</strong><br>
+      Before moving into computational linguistics, I translated Japanese publications
+      into Thai for Zenshu Publishing. It sharpened my eye
       for the small linguistic choices that change how a text is understood, an instinct
       that still shapes how I think about language today, including in my NLP work.`,
   },
@@ -62,12 +82,11 @@ const ACHIEVEMENTS = [
     photoCaption: "",
     title: "SAP Consultant",
     meta: "Japan System Techniques Co., Ltd. &middot; Osaka, Japan &middot; 2019 &ndash; 2021",
-    text: `As an SAP consultant in Osaka, I analyzed clients' existing workflows and
-      identified gaps between their processes and SAP best practices. A large part of my
-      role involved data migration -- mapping, cleansing, and validating data -- and
-      making sure information stayed consistent across integrated SAP modules. This is
-      where I first got hands-on with structured data at scale, and where I developed
-      the attention to data quality and system thinking I still rely on.`,
+    text: `As an SAP consultant in Osaka, I analyzed clients' existing workflows and identified gaps 
+    between their processes and SAP best practices. A large part of my role involved data migration 
+    — mapping, cleansing, and validating data — and making sure information stayed consistent across 
+    integrated SAP modules. This is where I first got hands-on with structured data at scale, 
+    and where I developed the attention to data quality and system thinking I still rely on.`,
   },
   {
     icon: "🎓",
@@ -84,28 +103,14 @@ const ACHIEVEMENTS = [
       Japanese translator.`,
   },
   {
-    icon: "💼",
-    photo: "photos/luckpim.jpg",
-    photoCaption: "",
-    title: "Japanese Translator",
-    meta: "Luckpim Publishing Co., Ltd. &middot; Bangkok, Thailand &middot; 2013 &ndash; 2017",
-    text: `While still an undergraduate, I worked as a Japanese translator for Luckpim
-      Publishing, translating Japanese texts into Thai for publication. Balancing this
-      work alongside my studies taught me how to manage deadlines and maintain
-      translation quality under pressure, and gave me real-world experience applying the
-      language skills I was building in the classroom well before I graduated.`,
-  },
-  {
     icon: "🌏",
     photo: "photos/mext.jpg",
     photoCaption: "",
     title: "MEXT Scholarship &mdash; Exchange Program",
     meta: "Chiba University &middot; Chiba, Japan &middot; 2014 &ndash; 2015",
-    text: `I spent a year in Japan on a full MEXT scholarship, studying Japanese language and
-      culture at Chiba University. Living and studying abroad pushed me to adapt quickly
-      -- navigating a new academic system, a new culture, and daily life entirely in
-      Japanese. Beyond the language gains, this year taught me the intercultural
-      communication skills that later became essential in my work as a translator and,
-      eventually, as an international student and professional in Germany.`,
+    text: `I spent a year in Japan on a full MEXT scholarship, studying Japanese language and culture at Chiba University.
+     Living and studying abroad pushed me to adapt quickly, navigating a new academic system, a new culture, and daily life 
+     entirely in Japanese. Beyond the language gains, this year taught me intercultural skills that stayed useful in my first job in Japan, 
+     and later again when I moved to Germany to study and work.`,
   },
 ];
